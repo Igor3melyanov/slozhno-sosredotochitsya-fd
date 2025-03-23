@@ -191,7 +191,7 @@
 }
 
 .footer {
-  block-size: calc(100vh - 5px);
+  block-size: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
