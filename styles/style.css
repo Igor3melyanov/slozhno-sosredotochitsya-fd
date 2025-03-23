@@ -1,5 +1,367 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-size: 18px;
+  line-height: 23.4px;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0 10px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  padding: 10px 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+  block-size: 100vh;
+}
+
+.heading::after {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  border-color: var(--accent-color);
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.heading::before {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  border-color: var(--accent-color);
+  border-style: solid;
+  border-width: -0 0 1px 1px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.decorated-zone {}
+
+.header__lamp {
+  position: absolute;
+  right: 28px;
+  top: 10px;
+  color: var(--accent-color);
+}
+
+.header__lamp::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  right: -20px;
+  top: 8px;
+}
+
+.header__theme-menu {
+  align-self: flex-end;
+  font-weight: var(--basis-text-weight);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  justify-self: end;
+  margin-block-start: 65px;
+  margin-block-end: 65px;
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid var(--hover-button-color);
+}
+
+.header__theme-menu-button {
+  inline-size: 70px;
+  block-size: 26px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--accent-color);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):focus-visible {
+  border-block-start-color: transparent;
+  border-inline-start-color: transparent;
+  border-inline-end-color: transparent;
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_type_light {}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  cursor: default;
+}
+
+.header__theme-menu-button_type_auto {}
+
+.header__theme-menu-button_type_dark {}
+
+.header__heading {
+  text-shadow: 4px 4px 0px var(--accent-color);
+  margin-block-end: 55px;
+}
+
+.heading {
+  font-weight: var(--heading-weight);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 96px;
+  color: var(--accent-heading-color);
+  align-self: center;
+}
+
+.header__title {
+  font-weight: var(--heading-weight);
+  width: clamp(355px, 100%, 365px);
+  justify-self: end;
+  align-self: start;
+}
+
+.subtitle-decor {
+  background-color: var(--accent-color);
+  color: var(--title-color);
+  font-size: inherit;
+}
+
+.section__title {
+  font-weight: var(--heading-weight);
+  color: var(--accent-color);
+  font-size: inherit;
+  margin-block-end: 20px;
+}
+
+.main .section:not(:first-child) {
+  padding-block-start: 50px;
+}
+
+.main .section:first-child {
+  padding-block-start: 40px;
+}
+
+.section__subtitle {
+  margin-block-end: 10px;
+}
+
+.section__text {
+  color: var(--text-color);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+  border-block-end: 1px solid transparent;
+  border: 1px solid transparent;
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.link:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+.section__text-container:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.section__subtitle-advice {
+  font-weight: 400;
+  margin-block: 20px 10px;
+}
+
+.pictures {
+  margin-block-end: 40px;
+}
+
+.section__picture {
+  inline-size: 100%;
+  display: block;
+}
+
+.picture-container:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+.footer {
+  block-size: calc(100vh - 5px);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.footer__title {
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .page {
+    padding: 10px 20px;
+  }
+
+  .header {
+    block-size: calc(100vh - 20px);
+  }
+
+  .header__heading {
+    margin: 0 0 0 -20px;
+  }
+
+  .header__title {
+    margin-block-start: 50px;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .title-questoin {
+    grid-row: 1 / -1;
+  }
+
+  .question .section__text-container {
+    grid-column: 2 / -1;
+    margin-inline-start: 5px;
+  }
+
+  .main .section:not(:first-child) {
+    padding-block-start: 80px;
+  }
+  
+  .main .section:first-child {
+    padding-block-start: 70px;
+  }
+
+  .section__text-container:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .reasons .section__title {
+    grid-column: 1 / -1;
+    width: 236px;
+  }
+
+  .reasons .section__text-container {
+    grid-column: 1 / -1;
+  }
+
+  .section__title {
+    margin-block-end: 0;
+  }
+
+  .advices .section__title {
+    grid-row: span 6;
+  }
+
+  .advices .section__subtitle {
+    grid-column: 2 / -1;
+    align-self: start;
+    margin-block-end: 0;
+    margin-inline-start: 5px;
+  }
+
+  .advices .section__text-container {
+    grid-column: 2 / -1;
+    padding-inline-start: 5px;
+  }
+
+  .section__subtitle-advice {
+    margin-block-start: 0;
+  }
+
+  .pictures {
+    margin-block-end: 60px;
+  }
+
+  .pictures .section__subtitle {
+    grid-column: 1 / -1;
+    margin-block-end: 0;
+  }
+
+  .picture-container:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .section__picture {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .pic-sunset {
+    grid-column: span 2;
+  }
+
+  .pic-ice-cream {
+    grid-row: span 2;
+  }
+
+  .pic-tape {
+    grid-row: span 3;
+  }
+
+  .pic-street {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    justify-self: center;
+    margin: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .heading {
+    font-size: 157px;
+  }
+
+  .header__title {
+    inline-size: 491px;
+    margin-block-start: 57px;
+  }
+
+  .question .section__text-container {
+    margin-inline-start: 0;
+  }
+
+  .reasons .section__title {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    inline-size: 315px;
+  }
+
+  .reasons .section__text-container {
+    grid-column: span 1;
+  }
+
+  .advices .section__subtitle {
+    margin-inline-start: 0;
+  }
+
+  .advices .section__text-container {
+    padding-inline-start: 0;
+  }
 }
