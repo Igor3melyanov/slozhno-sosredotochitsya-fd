@@ -45,8 +45,6 @@
   left: 0;
 }
 
-.decorated-zone {}
-
 .header__lamp {
   position: absolute;
   right: 28px;
@@ -101,16 +99,10 @@
   border-block-end: 1px solid var(--accent-color);
 }
 
-.header__theme-menu-button_type_light {}
-
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
   cursor: default;
 }
-
-.header__theme-menu-button_type_auto {}
-
-.header__theme-menu-button_type_dark {}
 
 .header__heading {
   text-shadow: 4px 4px 0px var(--accent-color);
