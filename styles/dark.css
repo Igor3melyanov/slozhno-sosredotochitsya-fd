@@ -15,6 +15,9 @@
   --title-color: #000028;
   --text-color: #F1B2CE;
   --hover-button-color: #ff007066;
+  --button-color: #FF0070;
+  --lamp-color: #FF0070;
+  --grand-title-color: #FF0070;
 }
 
 .theme-dark .page {

@@ -9,23 +9,31 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --background-color: #fff1f7;
   --background-image: url(../images/cover-image-light.png);
   --accent-heading-color: #ffc2e6;
   --accent-color: #FF8dcb;
   --title-color: #353430;
   --text-color: #353430;
   --hover-button-color: #32312d66;
+  --button-color: #353430;
+  --lamp-color: transparent;
+  --grand-title-color: #353430;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     /* Дублируем переменные светлой темы */
+    --background-color: #fff1f7;
     --background-image: url(../images/cover-image-light.png);
     --accent-heading-color: #ffc2e6;
     --accent-color: #FF8dcb;
     --title-color: #353430;
     --text-color: #353430;
     --hover-button-color: #32312d66;
+    --button-color: #353430;
+    --lamp-color: transparent;
+    --grand-title-color: #353430;
   }
 }
 
@@ -33,7 +41,7 @@
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
-.theme-light .header__lamp {
+/*.theme-light .header__lamp {
   color: transparent;
 }
 
@@ -56,4 +64,4 @@
 
 .theme-light .header__theme-menu-button:not(.header__theme-menu-button_active):focus-visible {
   border-block-end-color: var(--text-color);
-}
+}*/

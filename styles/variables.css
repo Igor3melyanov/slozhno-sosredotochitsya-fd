@@ -3,6 +3,8 @@
   и их переопределение под различные устройства
 */
 :root {
+  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
   --basis-text-weight: 400;
   --heading-weight: 700;
@@ -11,4 +13,7 @@
   --title-color: #000028;
   --text-color: #F1B2CE;
   --hover-button-color: #ff007066;
+  --button-color: #FF0070;
+  --lamp-color: #FF0070;
+  --grand-title-color: #FF0070;
 }
